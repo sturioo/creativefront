@@ -28,7 +28,6 @@ body {
     padding: 0 20px;
 }
 
-/* Header styles */
 header {
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -51,14 +50,8 @@ header.scrolled {
 }
 
 .logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    transition: all 0.3s ease;
-}
-
-header.scrolled .logo {
-    color: var(--white);
+    max-width: 150px;
+    height: auto;
 }
 
 nav ul {
@@ -85,21 +78,6 @@ nav ul li a:hover {
     color: var(--primary-color);
 }
 
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.mobile-menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--secondary-color);
-    margin: 3px 0;
-    transition: all 0.3s ease;
-}
-
-/* Hero section styles */
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
@@ -109,72 +87,30 @@ nav ul li a:hover {
     overflow: hidden;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 80%);
-    animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .hero h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
-    opacity: 0;
-    transform: translateY(20px);
     animation: fadeInUp 0.8s forwards;
 }
 
 .hero p {
     font-size: 1.5rem;
     max-width: 700px;
-    margin: 0 auto 2rem;
-    opacity: 0;
-    transform: translateY(20px);
+    margin: 0 auto;
     animation: fadeInUp 0.8s 0.2s forwards;
 }
 
 @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.cta-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--white);
-    padding: 12px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s 0.4s forwards;
-}
-
-.cta-button:hover {
-    background-color: #c0392b;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Services section styles */
 .services {
     padding: 100px 0;
     background-color: var(--white);
@@ -257,7 +193,6 @@ nav ul li a:hover {
     color: var(--white);
 }
 
-/* About section styles */
 .about {
     padding: 100px 0;
     background-color: var(--secondary-color);
@@ -295,6 +230,7 @@ nav ul li a:hover {
 
 .about-image img {
     max-width: 100%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -360,17 +296,6 @@ nav ul li a:hover {
     position: relative;
 }
 
-.skill-progress::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 5px;
-    height: 100%;
-    background-color: var(--white);
-}
-
-/* Portfolio section styles */
 .portfolio {
     padding: 100px 0;
     background-color: var(--white);
@@ -399,6 +324,7 @@ nav ul li a:hover {
 .portfolio-item img {
     width: 100%;
     height: auto;
+    display: block;
     transition: transform 0.3s ease;
 }
 
@@ -450,23 +376,11 @@ nav ul li a:hover {
     color: var(--secondary-color);
 }
 
-/* Contact section styles */
 .contact {
     padding: 100px 0;
     background-color: var(--bg-color);
     position: relative;
     overflow: hidden;
-}
-
-.contact::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(125, 179, 239, 0.1) 0%, rgba(125, 179, 239, 0) 70%);
-    animation: rotate 30s linear infinite;
 }
 
 .contact h2 {
@@ -580,65 +494,21 @@ button:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer styles */
 footer {
     background-color: var(--secondary-color);
     color: var(--white);
-    padding: 3rem 0 1rem;
-}
-
-/* Kontynuacja stylów dla stopki */
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
-
-.footer-info,
-.footer-links,
-.footer-social {
-    flex: 1;
-    margin-bottom: 1rem;
-}
-
-.footer-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.footer-links h4,
-.footer-social h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.footer-links ul {
-    list-style-type: none;
-}
-
-.footer-links ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-links ul li a {
-    color: var(--white);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-links ul li a:hover {
-    color: var(--primary-color);
+    text-align: center;
+    padding: 2rem 0;
 }
 
 .social-links {
-    display: flex;
+    margin-top: 1rem;
 }
 
 .social-links a {
     color: var(--white);
     font-size: 1.5rem;
-    margin-right: 1rem;
+    margin: 0 10px;
     transition: all 0.3s ease;
 }
 
@@ -647,13 +517,6 @@ footer {
     transform: translateY(-3px);
 }
 
-.footer-bottom {
-    text-align: center;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Responsywność */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -665,28 +528,6 @@ footer {
 
     nav ul li {
         margin: 0 10px;
-    }
-
-    .mobile-menu-toggle {
-        display: flex;
-    }
-
-    nav {
-        display: none;
-        width: 100%;
-    }
-
-    nav.active {
-        display: block;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
     }
 
     .hero h1 {
@@ -714,204 +555,4 @@ footer {
         padding-right: 0;
         margin-bottom: 2rem;
     }
-
-    .footer-content {
-        flex-direction: column;
-    }
-}
-
-/* Animacje */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideInFromLeft {
-    from {
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInFromRight {
-    from {
-        transform: translateX(50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes scaleIn {
-    from {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* Aplikowanie animacji */
-.service-item,
-.portfolio-item,
-.stat-item {
-    animation: scaleIn 0.5s ease-out forwards;
-    opacity: 0;
-}
-
-.about-text {
-    animation: slideInFromLeft 0.5s ease-out forwards;
-    opacity: 0;
-}
-
-.about-image {
-    animation: slideInFromRight 0.5s ease-out forwards;
-    opacity: 0;
-}
-
-.skill-item {
-    animation: slideInFromLeft 0.5s ease-out forwards;
-    opacity: 0;
-}
-
-/* Scrollbar customization */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-color);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--secondary-color);
-}
-
-/* Additional enhancements */
-.service-item,
-.portfolio-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-item:hover,
-.portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form textarea {
-    transition: all 0.3s ease;
-}
-
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form input[type="tel"]:focus,
-.contact-form textarea:focus {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Smooth scrolling for the entire page */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Add a subtle text shadow to headings for better readability */
-h1,
-h2,
-h3 {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Improve contrast for better accessibility */
-.hero p,
-.contact-info p {
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Add a subtle hover effect to the logo */
-.logo {
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.05);
-}
-
-/* Style form placeholders */
-::placeholder {
-    color: #999;
-    opacity: 1;
-}
-
-:-ms-input-placeholder {
-    color: #999;
-}
-
-::-ms-input-placeholder {
-    color: #999;
-}
-
-/* Add a subtle parallax effect to the hero section */
-.hero {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* Improve button accessibility */
-button,
-.cta-button {
-    position: relative;
-    overflow: hidden;
-}
-
-button::after,
-.cta-button::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s ease, height 0.3s ease;
-}
-
-button:hover::after,
-.cta-button:hover::after {
-    width: 300px;
-    height: 300px;
-}
-
-/* Add a subtle gradient to the background */
-body {
-    background: linear-gradient(to bottom, var(--bg-color), #e0e0e0);
 }
