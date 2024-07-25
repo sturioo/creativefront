@@ -59,31 +59,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Obsługa formularza kontaktowego
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
+    contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
+        
+        // Zbierz dane formularza
+        const formData = new FormData(this);
 
-        // Pobierz dane z formularza
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const message = document.getElementById('message').value;
-
-        // Pobierz zaznaczone usługi
-        const services = Array.from(document.querySelectorAll('input[name="service"]:checked'))
-            .map(checkbox => checkbox.value);
-
-        // Tutaj możesz dodać kod do wysłania danych na serwer
-        console.log('Dane z formularza:', {
-            name,
-            email,
-            phone,
-            message,
-            services
+        // Wyślij dane do Formspree
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
+                this.reset(); // Zresetuj formularz
+            } else {
+                alert('Ups! Coś poszło nie tak. Spróbuj ponownie później.');
+            }
+        }).catch(error => {
+            alert('Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.');
+            console.error('Error:', error);
         });
-        alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
-
-        // Zresetuj formularz
-        this.reset();
     });
 }
 
