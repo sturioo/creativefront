@@ -178,3 +178,9 @@ const navObserver = new IntersectionObserver((entries) => {
 sections.forEach(section => {
     navObserver.observe(section);
 });
+// Obsługa kafelków 3D w sekcji O nas
+document.querySelectorAll('.tile').forEach(tile => {
+    tile.addEventListener('click', () => {
+        tile.classList.toggle('active');
+    });
+});
