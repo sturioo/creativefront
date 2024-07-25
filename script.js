@@ -1,7 +1,16 @@
 // Zmiana wyglądu nagłówka przy przewijaniu
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
     header.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Obsługa menu mobilnego
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+
+hamburger.addEventListener('click', function () {
+    nav.classList.toggle('active');
+    this.classList.toggle('active');
 });
 
 // Animacja liczników
@@ -39,7 +48,7 @@ function animateSkillBars() {
 
 // Obsługa przewijania do sekcji
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
@@ -50,7 +59,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Obsługa formularza kontaktowego
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
         // Pobierz dane z formularza
@@ -64,7 +73,13 @@ if (contactForm) {
             .map(checkbox => checkbox.value);
 
         // Tutaj możesz dodać kod do wysłania danych na serwer
-        console.log('Dane z formularza:', { name, email, phone, message, services });
+        console.log('Dane z formularza:', {
+            name,
+            email,
+            phone,
+            message,
+            services
+        });
         alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
 
         // Zresetuj formularz
@@ -79,21 +94,33 @@ const portfolioItems = document.querySelectorAll('.portfolio-item');
 const closeModal = document.querySelector('.close');
 
 portfolioItems.forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
         modal.style.display = "block";
         modalImg.src = this.querySelector('img').src;
     });
 });
 
-closeModal.onclick = function() {
+closeModal.onclick = function () {
     modal.style.display = "none";
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
+
+// Obsługa FAQ
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('i');
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        icon.classList.toggle('fa-chevron-up');
+        icon.classList.toggle('fa-chevron-down');
+    });
+});
 
 // Inicjalizacja animacji przy załadowaniu strony
 window.addEventListener('load', () => {
@@ -109,6 +136,46 @@ const aboutObserver = new IntersectionObserver((entries) => {
         animateSkillBars();
         aboutObserver.unobserve(aboutSection);
     }
-}, { threshold: 0.5 });
+}, {
+    threshold: 0.5
+});
 
 aboutObserver.observe(aboutSection);
+
+// Animacja "fadeIn" dla sekcji przy przewijaniu
+const sections = document.querySelectorAll('section');
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            sectionObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+sections.forEach(section => {
+    sectionObserver.observe(section);
+});
+
+// Dodaj klasę "active" do aktualnej sekcji w nawigacji
+const navLinks = document.querySelectorAll('nav a');
+const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === entry.target.id) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}, {
+    threshold: 0.5
+});
+
+sections.forEach(section => {
+    navObserver.observe(section);
+});
