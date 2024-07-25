@@ -104,6 +104,10 @@ header.scrolled nav ul li a {
     transition: all 0.3s ease;
 }
 
+header.scrolled .hamburger span {
+    background-color: var(--white);
+}
+
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
@@ -712,9 +716,12 @@ footer {
 @media (max-width: 768px) {
     .header-content {
         flex-wrap: wrap;
+        padding: 0.5rem 0;
     }
 
     .logo {
+        max-width: 120px;
+        /* Zmniejszenie logo na urządzeniach mobilnych */
         margin-bottom: 1rem;
     }
 
@@ -772,6 +779,31 @@ footer {
     }
 
     .process-step {
-        margin-bottom: 2rem;
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .services h2,
+    .why-us h2,
+    .portfolio h2,
+    .process h2,
+    .contact h2,
+    .faq h2 {
+        font-size: 2rem;
+    }
+
+    .services-grid,
+    .why-us-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
     }
 }
