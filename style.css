@@ -110,7 +110,7 @@ header.scrolled .hamburger span {
 
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--secondary-color);
+    color: var(--white);
     padding: 180px 0 100px;
     text-align: center;
     position: relative;
@@ -133,6 +133,8 @@ header.scrolled .hamburger span {
     );
     animation: stripeAnimation 20s linear infinite;
     opacity: 0.1;
+}
+
 @keyframes stripeAnimation {
     0% {
         transform: rotate(0deg);
@@ -141,6 +143,7 @@ header.scrolled .hamburger span {
         transform: rotate(360deg);
     }
 }
+
 .hero h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -158,10 +161,17 @@ header.scrolled .hamburger span {
     animation: fadeInUp 0.8s 0.2s forwards;
 }
 
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .cta-button {
     display: inline-block;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: var(--accent-color);
+    color: var(--white);
     padding: 12px 30px;
     border-radius: 5px;
     text-decoration: none;
@@ -172,20 +182,11 @@ header.scrolled .hamburger span {
     animation: fadeInUp 0.8s 0.4s forwards;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .cta-button:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
+    background-color: var(--primary-color);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
 .services {
     padding: 100px 0;
     background-color: var(--white);
