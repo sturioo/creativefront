@@ -1,7 +1,7 @@
 :root {
     --primary-color: #7DB3EF;
     --secondary-color: #2C3E50;
-    --accent-color: #E74C3C;
+    --accent-color: #394B5C;
     --text-color: #333;
     --bg-color: #f4f4f4;
     --white: #ffffff;
@@ -28,7 +28,6 @@ body {
     padding: 0 20px;
 }
 
-/* Header Styles */
 header {
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -105,7 +104,10 @@ header.scrolled nav ul li a {
     transition: all 0.3s ease;
 }
 
-/* Hero Section Styles */
+header.scrolled .hamburger span {
+    background-color: var(--white);
+}
+
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
@@ -113,22 +115,6 @@ header.scrolled nav ul li a {
     text-align: center;
     position: relative;
     overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 80%);
-    animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
 
 .hero h1 {
@@ -175,7 +161,6 @@ header.scrolled nav ul li a {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Services Section Styles */
 .services {
     padding: 100px 0;
     background-color: var(--white);
@@ -258,7 +243,6 @@ header.scrolled nav ul li a {
     color: var(--white);
 }
 
-/* About Section Styles */
 .about {
     padding: 100px 0;
     background-color: var(--secondary-color);
@@ -306,7 +290,7 @@ header.scrolled nav ul li a {
     flex-direction: column;
     gap: 2rem;
     perspective: 1000px;
-    margin-bottom: 3rem;
+    margin-top: 3rem;
 }
 
 .tile {
@@ -332,7 +316,7 @@ header.scrolled nav ul li a {
 .tile-front, .tile-back {
     position: absolute;
     width: 100%;
-    height: 100%;
+   height: 100%;
     backface-visibility: hidden;
     display: flex;
     flex-direction: column;
@@ -429,7 +413,6 @@ header.scrolled nav ul li a {
     position: relative;
 }
 
-/* Why Choose Us Section Styles */
 .why-us {
     padding: 100px 0;
     background-color: var(--white);
@@ -467,7 +450,6 @@ header.scrolled nav ul li a {
     margin-bottom: 1rem;
 }
 
-/* Portfolio Section Styles */
 .portfolio {
     padding: 100px 0;
     background-color: var(--bg-color);
@@ -535,7 +517,6 @@ header.scrolled nav ul li a {
     text-align: center;
 }
 
-/* Process Section Styles */
 .process {
     padding: 100px 0;
     background-color: var(--white);
@@ -566,7 +547,6 @@ header.scrolled nav ul li a {
     margin-bottom: 1rem;
 }
 
-/* Contact Section Styles */
 .contact {
     padding: 100px 0;
     background-color: var(--bg-color);
@@ -681,7 +661,6 @@ button:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* FAQ Section Styles */
 .faq {
     padding: 100px 0;
     background-color: var(--white);
@@ -720,7 +699,6 @@ button:hover {
     display: none;
 }
 
-/* Footer Styles */
 footer {
     background-color: var(--secondary-color);
     color: var(--white);
@@ -744,7 +722,6 @@ footer {
     transform: translateY(-3px);
 }
 
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -755,7 +732,7 @@ footer {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal-content {
@@ -782,13 +759,14 @@ footer {
     cursor: pointer;
 }
 
-/* Responsiveness */
 @media (max-width: 768px) {
     .header-content {
         flex-wrap: wrap;
+        padding: 0.5rem 0;
     }
 
     .logo {
+        max-width: 120px;
         margin-bottom: 1rem;
     }
 
@@ -840,6 +818,15 @@ footer {
         margin-bottom: 2rem;
     }
 
+    .process-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .process-step {
+        margin: 1rem 0;
+    }
+
     .tile {
         height: auto;
     }
@@ -860,90 +847,29 @@ footer {
     .tile.active .tile-back {
         display: flex;
     }
+}
 
-    .why-us-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
     }
 
-    .process-steps {
-        flex-direction: column;
-        align-items: center;
+    .hero p {
+        font-size: 1rem;
     }
 
+    .services h2,
+    .why-us h2,
+    .portfolio h2,
+    .process h2,
+    .contact h2,
+    .faq h2 {
+        font-size: 2rem;
+    }
+
+    .services-grid,
+    .why-us-grid,
     .portfolio-grid {
         grid-template-columns: 1fr;
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideInFromLeft {
-    from {
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInFromRight {
-    from {
-        transform: translateX(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-out;
-}
-
-.slide-in-left {
-    animation: slideInFromLeft 1s ease-out;
-}
-
-.slide-in-right {
-    animation: slideInFromRight 1s ease-out;
-}
-
-/* Additional Enhancements */
-.service-item, .portfolio-item, .why-us-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-item:hover, .portfolio-item:hover, .why-us-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.skill-progress {
-    position: relative;
-    overflow: hidden;
-}
-
-.skill-progress::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transform: translateX(-100%);
-    animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-    100% {
-        transform: translateX(100%);
     }
 }
