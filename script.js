@@ -72,6 +72,29 @@ if (contactForm) {
     });
 }
 
+// Modal dla projektów w portfolio
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modalImg');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+const closeModal = document.querySelector('.close');
+
+portfolioItems.forEach(item => {
+    item.addEventListener('click', function() {
+        modal.style.display = "block";
+        modalImg.src = this.querySelector('img').src;
+    });
+});
+
+closeModal.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 // Inicjalizacja animacji przy załadowaniu strony
 window.addEventListener('load', () => {
     animateCounters();
