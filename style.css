@@ -28,6 +28,7 @@ body {
     padding: 0 20px;
 }
 
+/* Header Styles */
 header {
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -104,6 +105,7 @@ header.scrolled nav ul li a {
     transition: all 0.3s ease;
 }
 
+/* Hero Section Styles */
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
@@ -173,6 +175,7 @@ header.scrolled nav ul li a {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Services Section Styles */
 .services {
     padding: 100px 0;
     background-color: var(--white);
@@ -255,6 +258,7 @@ header.scrolled nav ul li a {
     color: var(--white);
 }
 
+/* About Section Styles */
 .about {
     padding: 100px 0;
     background-color: var(--secondary-color);
@@ -297,7 +301,6 @@ header.scrolled nav ul li a {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* New styles for 3D tiles in About section */
 .about-tiles {
     display: flex;
     flex-direction: column;
@@ -426,9 +429,48 @@ header.scrolled nav ul li a {
     position: relative;
 }
 
-.portfolio {
+/* Why Choose Us Section Styles */
+.why-us {
     padding: 100px 0;
     background-color: var(--white);
+}
+
+.why-us h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.why-us-item {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.why-us-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.why-us-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Portfolio Section Styles */
+.portfolio {
+    padding: 100px 0;
+    background-color: var(--bg-color);
 }
 
 .portfolio h2 {
@@ -493,6 +535,38 @@ header.scrolled nav ul li a {
     text-align: center;
 }
 
+/* Process Section Styles */
+.process {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.process h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.process-step {
+    text-align: center;
+    max-width: 200px;
+    margin: 1rem;
+}
+
+.process-step i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Contact Section Styles */
 .contact {
     padding: 100px 0;
     background-color: var(--bg-color);
@@ -607,6 +681,46 @@ button:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* FAQ Section Styles */
+.faq {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.faq-answer {
+    padding: 1rem;
+    display: none;
+}
+
+/* Footer Styles */
 footer {
     background-color: var(--secondary-color);
     color: var(--white);
@@ -630,6 +744,7 @@ footer {
     transform: translateY(-3px);
 }
 
+/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -667,6 +782,7 @@ footer {
     cursor: pointer;
 }
 
+/* Responsiveness */
 @media (max-width: 768px) {
     .header-content {
         flex-wrap: wrap;
@@ -744,9 +860,22 @@ footer {
     .tile.active .tile-back {
         display: flex;
     }
+
+    .why-us-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* Animacje */
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -786,12 +915,12 @@ footer {
     animation: slideInFromRight 1s ease-out;
 }
 
-/* Dodatkowe ulepszenia */
-.service-item, .portfolio-item {
+/* Additional Enhancements */
+.service-item, .portfolio-item, .why-us-item {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-item:hover, .portfolio-item:hover {
+.service-item:hover, .portfolio-item:hover, .why-us-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -817,31 +946,4 @@ footer {
     100% {
         transform: translateX(100%);
     }
-}
-
-/* Poprawki dostępności */
-button, .cta-button, a {
-    transition: all 0.3s ease;
-}
-
-button:focus, .cta-button:focus, a:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 3px;
-}
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-/* Smooth scrolling dla całej strony */
-html {
-    scroll-behavior: smooth;
 }
