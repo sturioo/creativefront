@@ -1,5 +1,5 @@
 // Zmiana wyglądu nagłówka przy przewijaniu
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
     header.classList.toggle('scrolled', window.scrollY > 50);
 });
@@ -8,7 +8,7 @@ window.addEventListener('scroll', function() {
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('nav');
 
-hamburger.addEventListener('click', function() {
+hamburger.addEventListener('click', function () {
     nav.classList.toggle('active');
     this.classList.toggle('active');
 });
@@ -48,9 +48,9 @@ function animateSkillBars() {
 
 // Obsługa przewijania do sekcji
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+       document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
@@ -59,34 +59,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Obsługa formularza kontaktowego
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        // Pobierz dane z formularza
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const message = document.getElementById('message').value;
+        // Zbierz dane formularza
+        const formData = new FormData(this);
 
-        // Pobierz zaznaczone usługi
-        const services = Array.from(document.querySelectorAll('input[name="service"]:checked'))
-            .map(checkbox => checkbox.value);
-
-        // Tutaj możesz dodać kod do wysłania danych na serwer
-        console.log('Dane z formularza:', { name, email, phone, message, services });
-        alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
-
-        // Zresetuj formularz
-        this.reset();
+        // Wyślij dane do Formspree
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
+                this.reset(); // Zresetuj formularz
+            } else {
+                alert('Ups! Coś poszło nie tak. Spróbuj ponownie później.');
+            }
+        }).catch(error => {
+            alert('Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.');
+            console.error('Error:', error);
+        });
     });
 }
-
-// Obsługa kafelków 3D w sekcji O nas
-document.querySelectorAll('.tile').forEach(tile => {
-    tile.addEventListener('click', () => {
-        tile.classList.toggle('active');
-    });
-});
 
 // Modal dla projektów w portfolio
 const modal = document.getElementById('modal');
@@ -95,17 +93,17 @@ const portfolioItems = document.querySelectorAll('.portfolio-item');
 const closeModal = document.querySelector('.close');
 
 portfolioItems.forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
         modal.style.display = "block";
         modalImg.src = this.querySelector('img').src;
     });
 });
 
-closeModal.onclick = function() {
+closeModal.onclick = function () {
     modal.style.display = "none";
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
@@ -123,31 +121,10 @@ faqQuestions.forEach(question => {
     });
 });
 
-// Animacje przy scrollowaniu
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-        if (elementTop < window.innerHeight && elementBottom > 0) {
-            element.classList.add('animate');
-        }
-    });
-};
-
-window.addEventListener('scroll', animateOnScroll);
-
 // Inicjalizacja animacji przy załadowaniu strony
 window.addEventListener('load', () => {
     animateCounters();
     animateSkillBars();
-    animateOnScroll();
-});
-
-// Animacja dla elementów "Dlaczego warto wybrać CreativeFront?"
-const whyUsItems = document.querySelectorAll('.why-us-item');
-whyUsItems.forEach((item, index) => {
-    item.style.animationDelay = `${index * 0.2}s`;
 });
 
 // Obserwator przecięcia dla sekcji "O nas"
@@ -158,19 +135,50 @@ const aboutObserver = new IntersectionObserver((entries) => {
         animateSkillBars();
         aboutObserver.unobserve(aboutSection);
     }
-}, { threshold: 0.5 });
+}, {
+    threshold: 0.5
+});
 
 aboutObserver.observe(aboutSection);
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+// Animacja "fadeIn" dla sekcji przy przewijaniu
+const sections = document.querySelectorAll('section');
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            sectionObserver.unobserve(entry.target);
+        }
     });
+}, {
+    threshold: 0.1
 });
+
+sections.forEach(section => {
+    sectionObserver.observe(section);
+});
+
+// Dodaj klasę "active" do aktualnej sekcji w nawigacji
+const navLinks = document.querySelectorAll('nav a');
+const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === entry.target.id) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}, {
+    threshold: 0.5
+});
+
+sections.forEach(section => {
+    navObserver.observe(section);
+});
+
 // Obsługa kafelków 3D w sekcji O nas
 document.querySelectorAll('.tile').forEach(tile => {
     tile.addEventListener('click', () => {
