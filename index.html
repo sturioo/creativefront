@@ -13,7 +13,8 @@
     <meta property="og:image" content="https://sturioo.github.io/creativefront/CreativeFront (7).png">
     <meta property="og:url" content="https://sturioo.github.io/creativefront/">
     <meta property="og:type" content="website">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="style.css">
     <script type="application/ld+json">
         {
@@ -50,11 +51,11 @@
                     <li><a href="#contact" title="Skontaktuj się z nami">Kontakt</a></li>
                 </ul>
             </nav>
-            <div class="hamburger" aria-label="Menu mobilne">
+            <button class="hamburger" aria-label="Menu mobilne" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
 
@@ -102,10 +103,9 @@
                     <div class="about-text">
                         <h3>Tworzymy przyszłość online</h3>
                         <p>Witaj w CreativeFront! Tworzymy niesamowite strony internetowe i sklepy online na Shopify i WordPress. Specjalizujemy się w funkcjonalnych i pięknych witrynach. Działamy od ponad 3 lat, mamy doświadczenie w HTML, CSS, JavaScript (React), oraz grafice (loga, banery). Optymalizujemy projekty pod kątem SEO/SEM, zwiększając widoczność i zyski. Dbamy o rzetelność, terminowość i stały kontakt z klientem.</p>
-
                     </div>
                     <div class="about-image">
-                        <img src="Gray Minimalist Phone Mockup Facebook Cover.jpg" alt="Zespół CreativeFront pracujący nad innowacyjnymi rozwiązaniami webowymi" width="400" height="300">
+                        <img src="Gray Minimalist Phone Mockup Facebook Cover.jpg" alt="Zespół CreativeFront pracujący nad innowacyjnymi rozwiązaniami webowymi" width="400" height="300" loading="lazy">
                     </div>
                 </div>
                 <div class="about-tiles">
@@ -229,42 +229,44 @@
                 <h2>Nasze ostatnie realizacje</h2>
                 <div class="portfolio-grid">
                     <div class="portfolio-item">
-                        <img src="screencapture-cichoszau-pl-2024-07-23-19_16_03.png" alt="Projekt strony Cichoszau.pl - organizacja imprez Silent Disco" width="300" height="200">
+                        <img src="screencapture-cichoszau-pl-2024-07-23-19_16_03
+                        <div class=" portfolio-item">
+                        <img src="screencapture-cichoszau-pl-2024-07-23-19_16_03.png" alt="Projekt strony Cichoszau.pl - organizacja imprez Silent Disco" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Cichoszau.pl</h3>
                             <p>Projekt strony internetowej zajmującej się organizacją imprez Silent Disco</p>
                         </div>
                     </div>
-                    <div class="portfolio-item<div class=" portfolio-item">
-                        <img src="screencapture-starboys-pl-2024-07-23-19_17_09.png" alt="Projekt sklepu internetowego Starboys.pl - marka odzieżowa" width="300" height="200">
+                    <div class="portfolio-item">
+                        <img src="screencapture-starboys-pl-2024-07-23-19_17_09.png" alt="Projekt sklepu internetowego Starboys.pl - marka odzieżowa" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Starboys.pl</h3>
-                            <p>Projekt skepu internetowego marki odzieżowej</p>
+                            <p>Projekt sklepu internetowego marki odzieżowej</p>
                         </div>
                     </div>
                     <div class="portfolio-item">
-                        <img src="screencapture-vivalamoda-es-2024-07-23-19_18_00.png" alt="Projekt sklepu Vivalamoda.es - moda i akcesoria" width="300" height="200">
+                        <img src="screencapture-vivalamoda-es-2024-07-23-19_18_00.png" alt="Projekt sklepu Vivalamoda.es - moda i akcesoria" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Vivalamoda.es</h3>
-                            <p>Projekt sklepu wraz z stroną główna nawigującą do poszczególnych podstron</p>
+                            <p>Projekt sklepu wraz ze stroną główną nawigującą do poszczególnych podstron</p>
                         </div>
                     </div>
                     <div class="portfolio-item">
-                        <img src="screencapture-icedstuff-pl-2024-07-23-19_35_46.png" alt="Projekt sklepu Icedstuff.pl - biżuteria męska i damska" width="300" height="200">
+                        <img src="screencapture-icedstuff-pl-2024-07-23-19_35_46.png" alt="Projekt sklepu Icedstuff.pl - biżuteria męska i damska" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Icedstuff.pl</h3>
-                            <p>Projekt sklepu internetowego zajmującego się sprzedażą męskiej i damskiej biżuternii</p>
+                            <p>Projekt sklepu internetowego zajmującego się sprzedażą męskiej i damskiej biżuterii</p>
                         </div>
                     </div>
                     <div class="portfolio-item">
-                        <img src="screencapture-oakey-co-nz-2024-07-23-19_28_39.png" alt="Projekt sklepu Oakey.co.nz - akcesoria detalingowe do samochodu" width="300" height="200">
+                        <img src="screencapture-oakey-co-nz-2024-07-23-19_28_39.png" alt="Projekt sklepu Oakey.co.nz - akcesoria detalingowe do samochodu" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Oakey.co.nz</h3>
-                            <p>Projekt sklepu internetowego zajmującego się sprzedażą akcesorii detalingowych do samochodu </p>
+                            <p>Projekt sklepu internetowego zajmującego się sprzedażą akcesoriów detalingowych do samochodu</p>
                         </div>
                     </div>
                     <div class="portfolio-item">
-                        <img src="screencapture-zloty-kroj-pl-2024-07-23-19_18_45.png" alt="Projekt sklepu Zloty-kroj.pl - wykroje i szycie" width="300" height="200">
+                        <img src="screencapture-zloty-kroj-pl-2024-07-23-19_18_45.png" alt="Projekt sklepu Zloty-kroj.pl - wykroje i szycie" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
                             <h3>Zloty-kroj.pl</h3>
                             <p>Projekt sklepu internetowego działającego w branży wykrojów oraz szycia</p>
@@ -279,29 +281,49 @@
                 <h2>Proces wykonania twojego zlecenia</h2>
                 <div class="process-steps">
                     <div class="process-step">
-                        <i class="fas fa-lightbulb" aria-hidden="true"></i>
-                        <h3>1. Konsultacja</h3>
+                        <div class="step-header">
+                            <div class="icon-container">
+                                <i class="fas fa-comments" aria-hidden="true"></i>
+                            </div>
+                            <h3>1. Konsultacja</h3>
+                        </div>
                         <p>Omawiamy Twoje potrzeby i cele biznesowe</p>
                     </div>
                     <div class="process-step">
-                        <i class="fas fa-pencil-alt" aria-hidden="true"></i>
-                        <h3>2. Projektowanie</h3>
+                        <div class="step-header">
+                            <div class="icon-container">
+                                <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                            </div>
+                            <h3>2. Projektowanie</h3>
+                        </div>
                         <p>Tworzymy wizualizację twojej przyszłej strony</p>
                     </div>
                     <div class="process-step">
-                        <i class="fas fa-code" aria-hidden="true"></i>
-                        <h3>3.Implementacja</h3>
-                        <p>Zaczynamy budować twoją stronę od podstaw uwzględniająć wcześniejszy projekt wizualny</p>
+                        <div class="step-header">
+                            <div class="icon-container">
+                                <i class="fas fa-code" aria-hidden="true"></i>
+                            </div>
+                            <h3>3. Implementacja</h3>
+                        </div>
+                        <p>Zaczynamy budować twoją stronę od podstaw uwzględniając wcześniejszy projekt wizualny</p>
                     </div>
                     <div class="process-step">
-                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <h3>4. Testowanie</h3>
+                        <div class="step-header">
+                            <div class="icon-container">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            </div>
+                            <h3>4. Testowanie</h3>
+                        </div>
                         <p>Sprawdzamy jakość i poprawiamy ewentualne błędy</p>
                     </div>
                     <div class="process-step">
-                        <i class="fas fa-rocket" aria-hidden="true"></i>
-                        <h3>5. Wdrożenie</h3>
-                        <p>Uruchamiamy Twoją stronę i zapewniamy pół roczne wsparcie techniczne</p>
+                        <div class="step-header">
+                            <div class="icon-container">
+                                <i class="fas fa-rocket" aria-hidden="true"></i>
+                            </div>
+                            <h3>5. Wdrożenie</h3>
+                        </div>
+                        <p>Uruchamiamy Twoją stronę i zapewniamy półroczne wsparcie techniczne</p>
                     </div>
                 </div>
             </div>
@@ -336,24 +358,34 @@
                             <label for="phone">Numer telefonu (opcjonalnie)</label>
                             <input type="tel" id="phone" name="phone">
                         </div>
-                        <div class="checkbox-group">
-                            <h4>Czego dotyczy wiadomość?</h4>
-                            <label>
-                                <input type="checkbox" name="Dotyczy" value="Strony/sklepy Shopify"> Strony/sklepy Shopify
+                        <fieldset class="checkbox-group">
+                            <legend>Czego dotyczy wiadomość?</legend>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="Dotyczy" value="Strony/sklepy Shopify">
+                                <span class="checkbox-custom"></span>
+                                Strony/sklepy Shopify
                             </label>
-                            <label>
-                                <input type="checkbox" name="Dotyczy" value="Strony WordPress"> Strony WordPress
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="Dotyczy" value="Strony WordPress">
+                                <span class="checkbox-custom"></span>
+                                Strony WordPress
                             </label>
-                            <label>
-                                <input type="checkbox" name="Dotyczy" value="Grafika i logo"> Grafika i logo
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="Dotyczy" value="Grafika i logo">
+                                <span class="checkbox-custom"></span>
+                                Grafika i logo
                             </label>
-                            <label>
-                                <input type="checkbox" name="Dotyczy" value="SEO/SEM"> SEO/SEM
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="Dotyczy" value="SEO/SEM">
+                                <span class="checkbox-custom"></span>
+                                SEO/SEM
                             </label>
-                            <label>
-                                <input type="checkbox" name="Dotyczy" value="Obsługa stron i sklepów"> Obsługa stron i sklepów
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="Dotyczy" value="Obsługa stron i sklepów">
+                                <span class="checkbox-custom"></span>
+                                Obsługa stron i sklepów
                             </label>
-                        </div>
+                        </fieldset>
                         <div class="form-group">
                             <label for="message">Wiadomość</label>
                             <textarea id="message" name="message" required aria-required="true"></textarea>
@@ -367,32 +399,31 @@
         <section id="faq" class="faq">
             <div class="container">
                 <h2>Często zadawane pytania</h2>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Jak długo trwa realizacja projektu?</h3>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Czas realizacji projektu zależy od jego skomplikowania oraz funkcjonalności jakie mają się znaleść na stronie. Średnio trwa to od 2 do 4 tygodni.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Czy zapewniacie hosting i domenę?</h3>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Nie ale chętnie pomożemy w wyborze odpowiedniego dla ciebie hostingu oraz skonfigurujemy domenę.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Czy oferujecie wsparcie po zakończeniu projektu?</h3>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Tak, oferujemy półroczne wsparcie techniczne i możliwość dalszego rozwoju projektu.</p>
-                    </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <h3>Jak długo trwa realizacja projektu?</h3>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Czas realizacji projektu zależy od jego skomplikowania oraz funkcjonalności, jakie mają się znaleźć na stronie. Średnio trwa to od 2 do 4 tygodni.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <h3>Czy zapewniacie hosting i domenę?</h3>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Nie, ale chętnie pomożemy w wyborze odpowiedniego dla ciebie hostingu oraz skonfigurujemy domenę.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <h3>Czy oferujecie wsparcie po zakończeniu projektu?</h3>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Tak, oferujemy półroczne wsparcie techniczne i możliwość dalszego rozwoju projektu.</p>
+                        </div>
+                    </details>
                 </div>
             </div>
         </section>
@@ -408,9 +439,9 @@
     </footer>
 
     <div id="modal" class="modal" aria-hidden="true">
-        <span class="close" aria-label="Zamknij">&times;</span>
+        <button class="close" aria-label="Zamknij">&times;</button>
         <img class="modal-content" id="modalImg" alt="Powiększony obraz projektu">
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body></html>
