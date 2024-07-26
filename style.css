@@ -145,7 +145,6 @@ header.scrolled .hamburger span {
     0% {
         transform: rotate(0deg);
     }
-
     100% {
         transform: rotate(360deg);
     }
@@ -484,11 +483,12 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    aspect-ratio: 16 / 9;
 }
 
 .portfolio-item img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
     display: block;
     transition: var(--transition);
@@ -545,7 +545,6 @@ h2 {
     text-align: center;
 }
 
-/* Style dla procesu realizacji */
 .process-steps {
     display: flex;
     justify-content: space-between;
@@ -899,9 +898,9 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .process-steps {
+    .header-content {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .logo {
@@ -920,7 +919,7 @@ footer {
 
     nav ul {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     nav ul li {
@@ -929,105 +928,96 @@ footer {
 
     .hamburger {
         display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1001;
     }
 
-    .about-content {
-        flex-direction: column;
+    .hamburger span {
+        background-color: var(--secondary-color);
     }
 
-    .about-text {
-        padding-right: 0;
-        margin-bottom: 2rem;
-    }
-
+    .about-content,
     .contact-content {
         flex-direction: column;
     }
 
+    .about-text,
     .contact-info {
         padding-right: 0;
         margin-bottom: 2rem;
     }
 
     .process-steps {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-        margin-top: 50px;
-        padding: 20px 0;
+        flex-direction: column;
+        align-items: center;
     }
 
     .process-steps::before {
-        content: '';
-        position: absolute;
-        top: 40px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: var(--primary-color);
-        z-index: 1;
+        display: none;
     }
 
     .process-step {
-        text-align: center;
-        position: relative;
-        z-index: 2;
-        flex: 1;
-        max-width: 200px;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 0.5s ease forwards;
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
 
-        .step-header {
-            margin-bottom: 20px;
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
 
+    .checkbox-custom {
+        border: none;
+    }
 
-            .tile {
-                height: auto;
-            }
+    .checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
+        color: var(--primary-color);
+    }
+}
 
-            .tile-inner {
-                height: auto;
-            }
+@media (max-width: 480px) {
+    .services-grid,
+    .why-us-grid {
+        grid-template-columns: 1fr;
+    }
 
-            .tile-front,
-            .tile-back {
-                position: relative;
-                height: auto;
-            }
+    .hero h1 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
 
-            .tile-back {
-                display: none;
-            }
+    .hero p {
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+    }
 
-            .tile.active .tile-back {
-                display: flex;
-            }
-        }
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 
-        @media (max-width: 480px) {
+    .stat-number {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
 
-            .services-grid,
-            .why-us-grid,
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    .stat-number::after {
+        font-size: 1.5rem;
+        right: -15px;
+    }
+}
 
-        @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-
-            .process-step {
-                animation: none;
-                opacity: 1;
-                transform: none;
-            }
-        }
+    .process-step {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
