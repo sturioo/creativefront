@@ -484,7 +484,9 @@ h2 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     aspect-ratio: 16 / 9;
+    background-color: var(--primary-color); /* Dodajemy tło */
 }
+
 
 .portfolio-item img {
     width: 100%;
@@ -492,13 +494,14 @@ h2 {
     object-fit: cover;
     display: block;
     transition: var(--transition);
+    opacity: 0.7; /* Zmniejszamy nieprzezroczystość obrazu */
 }
 
 .portfolio-item:hover img,
 .portfolio-item:focus img {
     transform: scale(1.1);
+    opacity: 1; /* Przywracamy pełną nieprzezroczystość przy najechaniu */
 }
-
 .portfolio-item::before {
     content: '';
     position: absolute;
@@ -526,20 +529,21 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0,7;
+    opacity: 1; /* Zmieniamy na 1, aby overlay był zawsze widoczny */
     transition: var(--transition);
+    background-color: rgba(0, 0, 0, 0.5); /* Dodajemy półprzezroczyste tło */
 }
 
 .portfolio-item:hover .portfolio-overlay,
 .portfolio-item:focus .portfolio-overlay {
-    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.7); /* Przyciemniamy tło przy najechaniu */
 }
 
 .portfolio-overlay h3 {
     color: var(--white);
     margin-bottom: 0.5rem;
+    text-align: center;
 }
-
 .portfolio-overlay p {
     color: var(--white);
     text-align: center;
