@@ -53,6 +53,7 @@ header.scrolled {
 .logo {
     max-width: 150px;
     height: auto;
+    display: block; /* Ensure logo is visible */
 }
 
 nav ul {
