@@ -371,8 +371,8 @@ h2 {
     transform-style: preserve-3d;
 }
 
-.tile.active .tile-inner {
-    transform: rotateX(180deg);
+.tile:hover .tile-inner {
+    transform: rotateY(180deg);
 }
 
 .tile-front,
@@ -398,7 +398,7 @@ h2 {
 .tile-back {
     background-color: var(--primary-color);
     color: var(--white);
-    transform: rotateX(180deg);
+    transform: rotateY(180deg);
     overflow-y: auto;
 }
 
@@ -412,7 +412,7 @@ h2 {
     transition: var(--transition);
 }
 
-.tile.active .tile-front i {
+.tile:hover .tile-front i {
     transform: rotate(180deg);
 }
 
@@ -474,7 +474,6 @@ h2 {
     background-color: var(--primary-color);
     width: 0;
     transition: width 1s ease-out;
-    position: relative;
 }
 
 .portfolio-item {
@@ -484,9 +483,8 @@ h2 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     aspect-ratio: 16 / 9;
-    background-color: var(--primary-color); /* Dodajemy tło */
+    background-color: var(--primary-color);
 }
-
 
 .portfolio-item img {
     width: 100%;
@@ -494,14 +492,15 @@ h2 {
     object-fit: cover;
     display: block;
     transition: var(--transition);
-    opacity: 0.7; /* Zmniejszamy nieprzezroczystość obrazu */
+    opacity: 0.7;
 }
 
 .portfolio-item:hover img,
 .portfolio-item:focus img {
     transform: scale(1.1);
-    opacity: 1; /* Przywracamy pełną nieprzezroczystość przy najechaniu */
+    opacity: 1;
 }
+
 .portfolio-item::before {
     content: '';
     position: absolute;
@@ -529,14 +528,14 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 1; /* Zmieniamy na 1, aby overlay był zawsze widoczny */
+    opacity: 1;
     transition: var(--transition);
-    background-color: rgba(0, 0, 0, 0.5); /* Dodajemy półprzezroczyste tło */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .portfolio-item:hover .portfolio-overlay,
 .portfolio-item:focus .portfolio-overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* Przyciemniamy tło przy najechaniu */
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .portfolio-overlay h3 {
@@ -544,9 +543,15 @@ h2 {
     margin-bottom: 0.5rem;
     text-align: center;
 }
+
 .portfolio-overlay p {
     color: var(--white);
     text-align: center;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
 }
 
 .process-steps {
