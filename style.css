@@ -372,8 +372,10 @@ h2 {
 }
 
 .tile:hover .tile-inner {
-    transform: rotateY(180deg);
+     transform: rotateY(180deg);
 }
+.tile.active .tile-inner {
+    transform: rotateY(180deg);
 
 .tile-front,
 .tile-back {
