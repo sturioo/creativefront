@@ -8,7 +8,6 @@ function initWebsite() {
     const skillBars = document.querySelectorAll('.skill-progress');
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
-    const tiles = document.querySelectorAll('.tile');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modalImg');
@@ -124,15 +123,6 @@ function initWebsite() {
         };
     }
 
-    // Obsługa kafelków 3D w sekcji O nas
-    function setupTiles() {
-        tiles.forEach(tile => {
-            tile.addEventListener('click', () => {
-                tile.classList.toggle('active');
-            });
-        });
-    }
-
     // Obserwator przecięcia dla sekcji
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -173,7 +163,6 @@ function initWebsite() {
 
     // Inicjalizacja wszystkich funkcji
     setupPortfolioModal();
-    setupTiles();
 }
 
 // Uruchomienie inicjalizacji po załadowaniu strony
