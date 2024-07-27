@@ -53,7 +53,7 @@ header.scrolled {
 .logo {
     max-width: 150px;
     height: auto;
-    display: block; /* Ensure logo is visible */
+    display: block;
 }
 
 nav ul {
@@ -352,60 +352,42 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    perspective: 1000px;
     margin-top: 3rem;
 }
 
 .tile {
-    background-color: transparent;
-    width: 100%;
-    height: 200px;
-    cursor: pointer;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: var(--transition);
 }
 
 .tile-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-.tile:hover .tile-inner {
-    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
 }
 
 .tile-front,
 .tile-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 2rem;
-    background-color: var(--bg-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
 }
 
 .tile-front {
-    color: var(--secondary-color);
+    background-color: var(--bg-color);
 }
 
 .tile-back {
     background-color: var(--primary-color);
     color: var(--white);
-    transform: rotateY(180deg);
-    overflow-y: auto;
+    display: none;
 }
 
 .tile-front h3,
 .tile-back h3 {
     margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
 .tile-front i {
@@ -413,8 +395,74 @@ h2 {
     transition: var(--transition);
 }
 
-.tile:hover .tile-front i {
-    transform: rotate(180deg);
+@media (min-width: 768px) {
+    .tile {
+        height: 200px;
+        perspective: 1000px;
+    }
+
+    .tile-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .tile:hover .tile-inner {
+        transform: rotateY(180deg);
+    }
+
+    .tile-front,
+    .tile-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tile-back {
+        transform: rotateY(180deg);
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .tile {
+        max-height: none;
+        height: auto;
+    }
+
+    .tile-front,
+    .tile-back {
+        position: relative;
+        display: block;
+    }
+
+    .tile-back {
+        display: none;
+    }
+
+    .tile.active .tile-front {
+        display: none;
+    }
+
+    .tile.active .tile-back {
+        display: block;
+    }
+
+    .tile-front i {
+        transition: transform 0.3s ease;
+    }
+
+    .tile.active .tile-front i {
+        transform: rotate(180deg);
+    }
 }
 
 .stats {
@@ -550,7 +598,6 @@ h2 {
     text-align: center;
 }
 
-/* Smooth scrolling for the entire page */
 html {
     scroll-behavior: smooth;
 }
@@ -906,6 +953,7 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
