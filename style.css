@@ -373,10 +373,8 @@ h2 {
 }
 
 .tile:hover .tile-inner {
-     transform: rotateY(180deg);
-}
-.tile.active .tile-inner {
     transform: rotateY(180deg);
+}
 
 .tile-front,
 .tile-back {
@@ -908,7 +906,6 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
-
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
