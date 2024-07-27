@@ -123,16 +123,6 @@ function initWebsite() {
         };
     }
 
-    // Nowa funkcja do obsługi kafelków
-    function setupTiles() {
-        const tiles = document.querySelectorAll('.tile');
-        tiles.forEach(tile => {
-            tile.addEventListener('click', () => {
-                tile.classList.toggle('active');
-            });
-        });
-    }
-
     // Obserwator przecięcia dla sekcji
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -173,7 +163,6 @@ function initWebsite() {
 
     // Inicjalizacja wszystkich funkcji
     setupPortfolioModal();
-    setupTiles(); // Dodane wywołanie nowej funkcji
 }
 
 // Uruchomienie inicjalizacji po załadowaniu strony
