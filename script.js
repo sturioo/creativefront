@@ -1,169 +1,184 @@
-'use strict';
+// Animacja liczników
+const counters = document.querySelectorAll('.stat-number');
+const speed = 300; // Zwiększona wartość dla wolniejszej animacji
 
-function initWebsite() {
-    const header = document.querySelector('header');
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    const counters = document.querySelectorAll('.stat-number');
-    const skillBars = document.querySelectorAll('.skill-progress');
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modalImg');
-    const closeModal = document.querySelector('.close');
-    const contactForm = document.querySelector('.contact-form');
-
-    // Obsługa przewijania i zmiana wyglądu nagłówka
-    window.addEventListener('scroll', () => {
-        requestAnimationFrame(() => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
-    });
-
-    // Obsługa menu mobilnego
-    hamburger.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        hamburger.classList.toggle('active');
-        hamburger.setAttribute('aria-expanded',
-            hamburger.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
-        );
-    });
-
-    // Animacja liczników
-    function animateCounters() {
-        counters.forEach(counter => {
+const animateCounters = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counter = entry.target;
             const target = +counter.getAttribute('data-target');
-            const duration = 2000; // 2 sekundy na animację
-            const step = target / (duration / 16); // 60 fps
-            let current = 0;
-
-            const updateCounter = () => {
-                current += step;
-                if (current < target) {
-                    counter.textContent = Math.round(current);
-                    requestAnimationFrame(updateCounter);
+            let count = 0;
+            const updateCount = () => {
+                const increment = target / (speed / 1.5);
+                if (count < target) {
+                    count += increment;
+                    counter.innerText = Math.floor(count);
+                    requestAnimationFrame(updateCount);
                 } else {
-                    counter.textContent = target;
+                    counter.innerText = target;
                 }
             };
+            requestAnimationFrame(updateCount);
+            observer.unobserve(counter);
+        }
+    });
+};
 
-            updateCounter();
-        });
-    }
+const counterObserver = new IntersectionObserver(animateCounters, {
+    threshold: 0.5
+});
 
-    // Animacja pasków umiejętności
-    function animateSkillBars() {
-        skillBars.forEach(bar => {
-            const width = bar.getAttribute('data-width');
-            bar.style.width = width;
-        });
-    }
+counters.forEach(counter => {
+    counterObserver.observe(counter);
+});
 
-    // Obsługa przewijania do sekcji
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
     });
+});
 
-    // Obsługa formularza kontaktowego
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const formData = new FormData(this);
+// Aktywna nawigacja podczas przewijania
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
 
-            try {
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
+const observerOptions = {
+    threshold: 0.5
+};
 
-                if (response.ok) {
-                    alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
-                    this.reset();
+const observerCallback = (entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const activeSection = entry.target.id;
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${activeSection}`) {
+                    link.classList.add('active');
                 } else {
-                    throw new Error('Coś poszło nie tak');
+                    link.classList.remove('active');
                 }
-            } catch (error) {
-                alert('Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.');
-                console.error('Error:', error);
-            }
-        });
-    }
-
-    // Obsługa modalu dla projektów w portfolio
-    function setupPortfolioModal() {
-        portfolioItems.forEach(item => {
-            item.addEventListener('click', function () {
-                modal.style.display = "block";
-                modalImg.src = this.querySelector('img').src;
-                modalImg.alt = this.querySelector('img').alt;
             });
-        });
+        }
+    });
+};
 
-        closeModal.onclick = () => {
-            modal.style.display = "none";
-        };
+const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-        window.onclick = (event) => {
-            if (event.target === modal) {
-                modal.style.display = "none";
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+// Animacja wejścia elementów
+const fadeInElements = document.querySelectorAll('.fade-in');
+
+const fadeInOptions = {
+    threshold: 0.3,
+    rootMargin: "0px 0px -100px 0px"
+};
+
+const fadeInObserver = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            if (entry.target.classList.contains('service-card')) {
+                entry.target.style.transitionDelay = `${Math.random() * 0.5}s`;
             }
-        };
+            observer.unobserve(entry.target);
+        }
+    });
+}, fadeInOptions);
+
+fadeInElements.forEach(element => {
+    fadeInObserver.observe(element);
+});
+
+// Walidacja i obsługa formularza
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (validateForm()) {
+        // Tutaj można dodać kod do wysyłania formularza, np. za pomocą fetch API
+        alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
+        form.reset();
+    }
+});
+
+function validateForm() {
+    let isValid = true;
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+
+    if (name.value.trim() === '') {
+        setErrorFor(name, 'Imię i nazwisko jest wymagane');
+        isValid = false;
+    } else {
+        setSuccessFor(name);
     }
 
-    // Obserwator przecięcia dla sekcji
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                if (entry.target.id === 'about') {
-                    animateCounters();
-                    animateSkillBars();
-                }
-                sectionObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
+    if (email.value.trim() === '') {
+        setErrorFor(email, 'Email jest wymagany');
+        isValid = false;
+    } else if (!isValidEmail(email.value.trim())) {
+        setErrorFor(email, 'Podaj poprawny adres email');
+        isValid = false;
+    } else {
+        setSuccessFor(email);
+    }
 
-    sections.forEach(section => {
-        section.classList.add('fade-in');
-        sectionObserver.observe(section);
-    });
+    if (message.value.trim() === '') {
+        setErrorFor(message, 'Wiadomość jest wymagana');
+        isValid = false;
+    } else {
+        setSuccessFor(message);
+    }
 
-    // Dodaj klasę "active" do aktualnej sekcji w nawigacji
-    const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('href').slice(1) === entry.target.id);
-                });
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-
-    sections.forEach(section => {
-        navObserver.observe(section);
-    });
-
-    // Inicjalizacja wszystkich funkcji
-    setupPortfolioModal();
+    return isValid;
 }
 
-// Uruchomienie inicjalizacji po załadowaniu strony
-document.addEventListener('DOMContentLoaded', initWebsite);
+function setErrorFor(input, message) {
+    const formGroup = input.parentElement;
+    const small = formGroup.querySelector('small');
+    formGroup.className = 'form-group error';
+    if (small) {
+        small.innerText = message;
+    } else {
+        const errorMessage = document.createElement('small');
+        errorMessage.innerText = message;
+        formGroup.appendChild(errorMessage);
+    }
+}
+
+function setSuccessFor(input) {
+    const formGroup = input.parentElement;
+    formGroup.className = 'form-group success';
+    const small = formGroup.querySelector('small');
+    if (small) {
+        small.remove();
+    }
+}
+
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// Animacja dla sekcji "O nas"
+const statItems = document.querySelectorAll('.stat-item');
+statItems.forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.2}s`;
+});
+
+// Animacja dla sekcji "Nasze usługi"
+const serviceCards = document.querySelectorAll('.service-card');
+serviceCards.forEach((card, index) => {
+    card.style.transitionDelay = `${index * 0.2}s`;
+});
+
+// Animacja dla portfolio
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+portfolioItems.forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.1}s`;
+});
