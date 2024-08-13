@@ -4,67 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreativeFront - Innowacyjne rozwiązania webowe | Shopify, WordPress, SEO</title>
-    <meta name="description" content="CreativeFront - eksperci w tworzeniu stron i sklepów na Shopify i WordPress. Oferujemy projektowanie logo, banerów i kompleksowe usługi graficzne. Zwiększ swoją obecność online z nami!">
-    <meta name="keywords" content="Shopify, WordPress, tworzenie stron, sklepy internetowe, logo, banery, grafika, SEO, SEM">
-    <link rel="canonical" href="https://sturioo.github.io/creativefront/">
-    <meta property="og:title" content="CreativeFront - Innowacyjne rozwiązania webowe | Shopify, WordPress, SEO">
-    <meta property="og:description" content="Eksperci w tworzeniu stron i sklepów na Shopify i WordPress. Projektujemy również logo, banery i oferujemy kompleksowe usługi graficzne.">
-    <meta property="og:image" content="https://sturioo.github.io/creativefront/CreativeFront (7).png">
-    <meta property="og:url" content="https://sturioo.github.io/creativefront/">
-    <meta property="og:type" content="website">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="style.css">
+    <title>CreativeFront - Profesjonalne tworzenie stron i sklepów internetowych | Twój sukces online zaczyna się tutaj</title>
+    <meta name="description" content="CreativeFront tworzy wyjątkowe strony i sklepy internetowe na Shopify i WordPress. Specjalizujemy się w funkcjonalnych i pięknych witrynach, optymalizacji SEO/SEM oraz grafice. Rozpocznij swój projekt już dziś!">
+    <meta name="keywords" content="strony internetowe, sklepy online, Shopify, WordPress, SEO, SEM, grafika, logo">
+    <link rel="canonical" href="https://www.creativefront.pl/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "WebDesignCompany",
             "name": "CreativeFront",
-            "url": "https://sturioo.github.io/creativefront/",
-            "logo": "https://sturioo.github.io/creativefront/CreativeFront (7).png",
-            "description": "Profesjonalne tworzenie stron i sklepów na Shopify i WordPress. Oferujemy również projektowanie logo, banerów i kompleksowe usługi graficzne.",
-            "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "PL"
+            "url": "https://www.creativefront.pl",
+            "logo": "https://www.creativefront.pl/logo.png",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+48792828884",
+                "contactType": "customer service"
             },
-            "telephone": "+48792828884",
-            "email": "creativefront.projects@gmail.com",
             "sameAs": [
-                "https://www.facebook.com/creativefront1/"
+                "https://www.facebook.com/creativefront1/",
+                "https://www.instagram.com/creativefront"
             ]
         }
+
     </script>
 </head>
 
 <body>
-    <header>
-        <div class="container header-content">
-            <img src="CreativeFront (7).png" alt="CreativeFront Logo - Profesjonalne tworzenie stron i sklepów internetowych" class="logo" width="150" height="50">
-            <nav>
-                <ul>
-                    <li><a href="#home" title="Strona główna CreativeFront">Strona główna</a></li>
-                    <li><a href="#services" title="Nasze usługi webowe">Usługi</a></li>
-                    <li><a href="#about" title="O firmie CreativeFront">O nas</a></li>
-                    <li><a href="#portfolio" title="Nasze realizacje">Realizacje</a></li>
-                    <li><a href="#process" title="Proces realizacji projektów">Proces realizacji</a></li>
-                    <li><a href="#contact" title="Skontaktuj się z nami">Kontakt</a></li>
+    <header class="navbar">
+        <div class="navbar-container container">
+            <a href="#" class="logo" aria-label="CreativeFront - Strona główna">CreativeFront</a>
+            <nav aria-label="Menu główne">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Strona główna</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">O nas</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Usługi</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Kontakt</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" aria-label="Menu mobilne" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <a href="#contact" class="cta-button">Rozpocznij projekt</a>
         </div>
     </header>
 
     <main>
         <section id="home" class="hero">
-            <div class="container">
+            <div class="hero-content">
                 <h1>Twój sukces online zaczyna się tutaj</h1>
-                <p>Tworzymy wyjątkowe strony i sklepy internetowe, które przeniosą Twój biznes na nowy poziom.</p>
-                <a href="#contact" class="cta-button" title="Rozpocznij projekt z CreativeFront">Rozpocznij projekt</a>
+                <h2>Tworzymy wyjątkowe strony i sklepy internetowe, które przeniosą Twój biznes na nowy poziom.</h2>
+                <a href="#contact" class="hero-cta">Rozpocznij projekt</a>
+            </div>
+            <div class="hero-bg" aria-hidden="true"></div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Tworzymy przyszłość online</h2>
+                        <h3>Witaj w CreativeFront!</h3>
+                        <p>Tworzymy niesamowite strony internetowe i sklepy online na Shopify i WordPress. Specjalizujemy się w funkcjonalnych i pięknych witrynach. Działamy od ponad 3 lat, mamy doświadczenie w HTML, CSS, JavaScript (React), oraz grafice (loga, banery). Optymalizujemy projekty pod kątem SEO/SEM, zwiększając widoczność i zyski. Dbamy o rzetelność, terminowość i stały kontakt z klientem.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="Gray Minimalist Phone Mockup Facebook Cover.jpg" alt="Zespół CreativeFront przy pracy" width="600" height="400" loading="lazy">
+                    </div>
+                </div>
+                <div class="stats">
+                    <div class="stat-item fade-in">
+                        <div class="stat-number" data-target="3">0</div>
+                        <div class="stat-label">Lata doświadczenia</div>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-number" data-target="120">0</div>
+                        <div class="stat-label">Zrealizowanych projektów</div>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-number" data-target="120">0</div>
+                        <div class="stat-label">Zadowolonych klientów</div>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <div class="stat-number" data-target="14">0</div>
+                        <div class="stat-label">Dni - średni czas realizacji</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -72,154 +95,26 @@
             <div class="container">
                 <h2>Nasze usługi</h2>
                 <div class="services-grid">
-                    <div class="service-item">
-                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                        <h3>Sklepy Shopify</h3>
-                        <p>Profesjonalne i wydajne sklepy/strony na platformie Shopify</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fab fa-wordpress" aria-hidden="true"></i>
-                        <h3>Strony WordPress</h3>
-                        <p>Elastyczne i łatwe w zarządzaniu strony/sklepy oparte o WordPress</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-paint-brush" aria-hidden="true"></i>
-                        <h3>Grafika i logo</h3>
-                        <p>Unikalne projekty graficzne i logo budujące tożsamość marki</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-chart-line" aria-hidden="true"></i>
-                        <h3>SEO/SEM</h3>
-                        <p>Optymalizacja i marketing w wyszukiwarkach dla większej widoczności</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <h2>Kim jesteśmy?</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>Tworzymy przyszłość online</h3>
-                        <p>Witaj w CreativeFront! Tworzymy niesamowite strony internetowe i sklepy online na Shopify i WordPress. Specjalizujemy się w funkcjonalnych i pięknych witrynach. Działamy od ponad 3 lat, mamy doświadczenie w HTML, CSS, JavaScript (React), oraz grafice (loga, banery). Optymalizujemy projekty pod kątem SEO/SEM, zwiększając widoczność i zyski. Dbamy o rzetelność, terminowość i stały kontakt z klientem.</p>
-                    </div>
-                    <div class="about-image">
-                        <img src="Gray Minimalist Phone Mockup Facebook Cover.jpg" alt="Zespół CreativeFront pracujący nad innowacyjnymi rozwiązaniami webowymi" width="400" height="300" loading="lazy">
-                    </div>
-                </div>
-                <div class="about-tiles">
-                    <div class="tile">
-                        <div class="tile-inner">
-                            <div class="tile-front">
-                                <h3>Nowoczesne Technologie dla Rozwoju Twojej Firmy <i class="fas fa-chevron-down" aria-hidden="true"></i></h3>
-                                <p>Dostarczamy innowacyjne rozwiązania webowe...</p>
-                            </div>
-                            <div class="tile-back">
-                                <h3>Nowoczesne Technologie dla Rozwoju Twojej Firmy</h3>
-                                <p>Dostarczamy innowacyjne rozwiązania webowe, które pomagają naszym klientom osiągać sukces w cyfrowym świecie. Naszym celem jest tworzenie stron internetowych i sklepów online, które nie tylko wyglądają atrakcyjnie, ale również przynoszą realne korzyści biznesowe.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tile">
-                        <div class="tile-inner">
-                            <div class="tile-front">
-                                <h3>Kreowanie Przyszłości Internetu z Wyjątkowym Designem i Funkcjonalnością <i class="fas fa-chevron-down" aria-hidden="true"></i></h3>
-                                <p>Dążymy do bycia liderem w branży...</p>
-                            </div>
-                            <div class="tile-back">
-                                <h3>Kreowanie Przyszłości Internetu z Wyjątkowym Designem i Funkcjonalnością</h3>
-                                <p>Dążymy do bycia liderem w branży tworzenia stron internetowych, wyznaczając nowe standardy w designie i funkcjonalności. Chcemy być znani jako firma, która nie tylko podąża za trendami, ale je kreuje, dostarczając klientom rozwiązania, które wyprzedzają ich oczekiwania.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tile">
-                        <div class="tile-inner">
-                            <div class="tile-front">
-                                <h3>Eksperci w Responsywnych Stronach i Sklepach Online z Nowoczesnymi Strategiami Marketingowymi <i class="fas fa-chevron-down" aria-hidden="true"></i></h3>
-                                <p>Tworzymy responsywne strony internetowe...</p>
-                            </div>
-                            <div class="tile-back">
-                                <h3>Eksperci w Responsywnych Stronach i Sklepach Online z Nowoczesnymi Strategiami Marketingowymi</h3>
-                                <p>Specjalizujemy się w tworzeniu responsywnych stron internetowych, wydajnych sklepów online oraz kompleksowych strategii marketingu cyfrowego. Nasz zespół ekspertów łączy najnowsze trendy w designie z zaawansowanymi rozwiązaniami technologicznymi, aby zapewnić naszym klientom przewagę konkurencyjną w dynamicznym świecie online.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="3">0</div>
-                        <p>Lata doświadczenia</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="120">0</div>
-                        <p>Zrealizowanych projektów</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="120">0</div>
-                        <p>Zadowolonych klientów</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="14">0</div>
-                        <p>Dni - Średni czas realizacji projektu</p>
-                    </div>
-                </div>
-                <div class="skills">
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Shopify</span>
-                            <span>100%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="100%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>WordPress</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>HTML, CSS, JS</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="80%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="why-us" class="why-us">
-            <div class="container">
-                <h2>Dlaczego warto wybrać CreativeFront?</h2>
-                <div class="why-us-grid">
-                    <div class="why-us-item">
-                        <i class="fas fa-award" aria-hidden="true"></i>
-                        <h3>Doświadczenie</h3>
-                        <p>3 lat na rynku i setki zadowolonych klientów</p>
-                    </div>
-                    <div class="why-us-item">
-                        <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
-                        <h3>Wydajność</h3>
-                        <p>Nasze strony są szybkie i zoptymalizowane</p>
-                    </div>
-                    <div class="why-us-item">
-                        <i class="fas fa-users" aria-hidden="true"></i>
-                        <h3>Wsparcie</h3>
-                        <p>Zapewniamy pół roczne wsparcie po zakończeniu projektu</p>
-                    </div>
-                    <div class="why-us-item">
-                        <i class="fas fa-lightbulb" aria-hidden="true"></i>
-                        <h3>Innowacyjność</h3>
-                        <p>Wykorzystujemy najnowsze technologie i kierujemy się najnowszymi trendami</p>
-                    </div>
+                    <article class="service-card fade-in">
+                        <i class="fas fa-shopping-cart service-icon" aria-hidden="true"></i>
+                        <h3 class="service-title">Sklepy Shopify</h3>
+                        <p class="service-description">Profesjonalne i wydajne sklepy/strony na platformie Shopify</p>
+                    </article>
+                    <article class="service-card fade-in">
+                        <i class="fab fa-wordpress service-icon" aria-hidden="true"></i>
+                        <h3 class="service-title">Strony WordPress</h3>
+                        <p class="service-description">Elastyczne i łatwe w zarządzaniu strony/sklepy oparte o WordPress</p>
+                    </article>
+                    <article class="service-card fade-in">
+                        <i class="fas fa-palette service-icon" aria-hidden="true"></i>
+                        <h3 class="service-title">Grafika i logo</h3>
+                        <p class="service-description">Unikalne projekty graficzne i logo budujące tożsamość marki</p>
+                    </article>
+                    <article class="service-card fade-in">
+                        <i class="fas fa-search service-icon" aria-hidden="true"></i>
+                        <h3 class="service-title">SEO/SEM</h3>
+                        <p class="service-description">Optymalizacja i marketing w wyszukiwarkach dla większej widoczności</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -228,103 +123,48 @@
             <div class="container">
                 <h2>Nasze ostatnie realizacje</h2>
                 <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="screencapture-cichoszau-pl-2024-07-23-19_16_03.png" alt="Projekt strony Cichoszau.pl - organizacja imprez"
-                            <div class="portfolio-item">
-                        <img src="screencapture-cichoszau-pl-2024-07-23-19_16_03.png" alt="Projekt strony Cichoszau.pl - organizacja imprez Silent Disco" width="300" height="200" loading="lazy">
+                    <article class="portfolio-item fade-in">
+                        <img src="screencapture-cichoszau-pl-2024-07-23-19_16_03.png" alt="Strona główna sklepu Cichoszau" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
-                            <h3>Cichoszau.pl</h3>
-                            <p>Projekt strony internetowej zajmującej się organizacją imprez Silent Disco</p>
+                            <h3 class="portfolio-title">cichoszau.pl</h3>
+                            <p class="portfolio-category">Sklep Shopify</p>
                         </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="screencapture-starboys-pl-2024-07-23-19_17_09.png" alt="Projekt sklepu internetowego Starboys.pl - marka odzieżowa" width="300" height="200" loading="lazy">
+                    </article>
+                    <article class="portfolio-item fade-in">
+                        <img src="screencapture-zloty-kroj-pl-2024-07-23-19_18_45.png" alt="Strona główna Złoty Krój" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
-                            <h3>Starboys.pl</h3>
-                            <p>Projekt sklepu internetowego marki odzieżowej</p>
+                            <h3 class="portfolio-title">zloty-kroj.pl</h3>
+                            <p class="portfolio-category">Strona WordPress</p>
                         </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="screencapture-vivalamoda-es-2024-07-23-19_18_00.png" alt="Projekt sklepu Vivalamoda.es - moda i akcesoria" width="300" height="200" loading="lazy">
+                    </article>
+                    <article class="portfolio-item fade-in">
+                        <img src="screencapture-starboys-pl-2024-07-23-19_17_09.png" alt="Logo i branding Starboys" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
-                            <h3>Vivalamoda.es</h3>
-                            <p>Projekt sklepu wraz ze stroną główną nawigującą do poszczególnych podstron</p>
+                            <h3 class="portfolio-title">Starboys.pl</h3>
+                            <p class="portfolio-category">Logo i branding</p>
                         </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="screencapture-icedstuff-pl-2024-07-23-19_35_46.png" alt="Projekt sklepu Icedstuff.pl - biżuteria męska i damska" width="300" height="200" loading="lazy">
+                    </article>
+                    <article class="portfolio-item fade-in">
+                        <img src="screencapture-vivalamoda-es-es-2024-08-13-15_39_47.png" alt="Strona główna Vivalamoda" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
-                            <h3>Icedstuff.pl</h3>
-                            <p>Projekt sklepu internetowego zajmującego się sprzedażą męskiej i damskiej biżuterii</p>
+                            <h3 class="portfolio-title">vivalamoda.es</h3>
+                            <p class="portfolio-category">Kampania SEO</p>
                         </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="screencapture-oakey-co-nz-2024-07-23-19_28_39.png" alt="Projekt sklepu Oakey.co.nz - akcesoria detalingowe do samochodu" width="300" height="200" loading="lazy">
+                    </article>
+                    <article class="portfolio-item fade-in">
+                        <img src="screencapture-oakey-co-nz-2024-07-23-19_28_39.png" alt="Sklep WooCommerce Oakey" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
-                            <h3>Oakey.co.nz</h3>
-                            <p>Projekt sklepu internetowego zajmującego się sprzedażą akcesoriów detalingowych do samochodu</p>
+                            <h3 class="portfolio-title">oakey.co.nz</h3>
+                            <p class="portfolio-category">Sklep WooCommerce</p>
                         </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="screencapture-zloty-kroj-pl-2024-07-23-19_18_45.png" alt="Projekt sklepu Zloty-kroj.pl - wykroje i szycie" width="300" height="200" loading="lazy">
+                    </article>
+                    <article class="portfolio-item fade-in">
+                        <img src="screencapture-icedstuff-pl-2024-07-23-19_35_46.png" alt="Strona korporacyjna IcedStuff" width="300" height="200" loading="lazy">
                         <div class="portfolio-overlay">
-                            <h3>Zloty-kroj.pl</h3>
-                            <p>Projekt sklepu internetowego działającego w branży wykrojów oraz szycia</p>
+                            <h3 class="portfolio-title">icedstuff.pl</h3>
+                            <p class="portfolio-category">Strona korporacyjna</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="process" class="process">
-            <div class="container">
-                <h2>Proces wykonania twojego zlecenia</h2>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-header">
-                            <div class="icon-container">
-                                <i class="fas fa-comments" aria-hidden="true"></i>
-                            </div>
-                            <h3>1. Konsultacja</h3>
-                        </div>
-                        <p>Omawiamy Twoje potrzeby i cele biznesowe</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-header">
-                            <div class="icon-container">
-                                <i class="fas fa-pencil-alt" aria-hidden="true"></i>
-                            </div>
-                            <h3>2. Projektowanie</h3>
-                        </div>
-                        <p>Tworzymy wizualizację twojej przyszłej strony</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-header">
-                            <div class="icon-container">
-                                <i class="fas fa-code" aria-hidden="true"></i>
-                            </div>
-                            <h3>3. Implementacja</h3>
-                        </div>
-                        <p>Zaczynamy budować twoją stronę od podstaw uwzględniając wcześniejszy projekt wizualny</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-header">
-                            <div class="icon-container">
-                                <i class="fas fa-check-circle" aria-hidden="true"></i>
-                            </div>
-                            <h3>4. Testowanie</h3>
-                        </div>
-                        <p>Sprawdzamy jakość i poprawiamy ewentualne błędy</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-header">
-                            <div class="icon-container">
-                                <i class="fas fa-rocket" aria-hidden="true"></i>
-                            </div>
-                            <h3>5. Wdrożenie</h3>
-                        </div>
-                        <p>Uruchamiamy Twoją stronę i zapewniamy półroczne wsparcie techniczne</p>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -333,116 +173,67 @@
             <div class="container">
                 <h2>Skontaktuj się z nami</h2>
                 <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Jesteśmy tutaj, aby Ci pomóc</h3>
-                        <p>Masz pytania lub chcesz omówić swój projekt? Skontaktuj się z nami już dziś!</p>
-                        <div class="contact-method">
-                            <i class="fas fa-phone" aria-hidden="true"></i>
-                            <span>+48 792 828 884</span>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                            <span>creativefront.projects@gmail.com</span>
-                        </div>
+                    <div class="contact-info fade-in">
+                        <p>Jesteśmy tutaj, aby Ci pomóc. Masz pytania lub chcesz omówić swój projekt? Skontaktuj się z nami już dziś!</p>
+                        <p><strong>Telefon:</strong> <a href="tel:+48792828884">+48 792 828 884</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:creativefront.projects@gmail.com">creativefront.projects@gmail.com</a></p>
                     </div>
-                    <form class="contact-form" action="https://formspree.io/f/xovajzqz" method="POST">
+                    <form class="contact-form fade-in" id="contactForm" action="/submit-form" method="POST">
                         <div class="form-group">
                             <label for="name">Imię i nazwisko</label>
-                            <input type="text" id="name" name="name" required aria-required="true">
+                            <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input type="email" id="email" name="_replyto" required aria-required="true">
+                            <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Numer telefonu (opcjonalnie)</label>
                             <input type="tel" id="phone" name="phone">
                         </div>
-                        <fieldset class="checkbox-group">
-                            <legend>Czego dotyczy wiadomość?</legend>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="Dotyczy" value="Strony/sklepy Shopify">
-                                <span class="checkbox-custom"></span>
-                                Strony/sklepy Shopify
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="Dotyczy" value="Strony WordPress">
-                                <span class="checkbox-custom"></span>
-                                Strony WordPress
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="Dotyczy" value="Grafika i logo">
-                                <span class="checkbox-custom"></span>
-                                Grafika i logo
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="Dotyczy" value="SEO/SEM">
-                                <span class="checkbox-custom"></span>
-                                SEO/SEM
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="Dotyczy" value="Obsługa stron i sklepów">
-                                <span class="checkbox-custom"></span>
-                                Obsługa stron i sklepów
-                            </label>
-                        </fieldset>
+                        <div class="form-group">
+                            <label>Czego dotyczy wiadomość?</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="service" value="shopify"> Strony/sklepy Shopify</label>
+                                <label><input type="checkbox" name="service" value="wordpress"> Strony WordPress</label>
+                                <label><input type="checkbox" name="service" value="graphics"> Grafika i logo</label>
+                                <label><input type="checkbox" name="service" value="seo"> SEO/SEM</label>
+                                <label><input type="checkbox" name="service" value="maintenance"> Obsługa stron i sklepów</label>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="message">Wiadomość</label>
-                            <textarea id="message" name="message" required aria-required="true"></textarea>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit">Wyślij wiadomość</button>
+                        <button type="submit" class="submit-btn">Wyślij wiadomość</button>
                     </form>
-                </div>
-            </div>
-        </section>
-
-        <section id="faq" class="faq">
-            <div class="container">
-                <h2>Często zadawane pytania</h2>
-                <div class="faq-list">
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            <h3>Jak długo trwa realizacja projektu?</h3>
-                        </summary>
-                        <div class="faq-answer">
-                            <p>Czas realizacji projektu zależy od jego skomplikowania oraz funkcjonalności, jakie mają się znaleźć na stronie. Średnio trwa to od 2 do 4 tygodni.</p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            <h3>Czy zapewniacie hosting i domenę?</h3>
-                        </summary>
-                        <div class="faq-answer">
-                            <p>Nie, ale chętnie pomożemy w wyborze odpowiedniego dla ciebie hostingu oraz skonfigurujemy domenę.</p>
-                        </div>
-                    </details>
-                    <details class="faq-item">
-                        <summary class="faq-question">
-                            <h3>Czy oferujecie wsparcie po zakończeniu projektu?</h3>
-                        </summary>
-                        <div class="faq-answer">
-                            <p>Tak, oferujemy półroczne wsparcie techniczne i możliwość dalszego rozwoju projektu.</p>
-                        </div>
-                    </details>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 CreativeFront. Wszelkie prawa zastrzeżone.</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/creativefront1/" target="_blank" rel="noopener noreferrer" aria-label="Facebook CreativeFront"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>O nas</h3>
+                    <p>CreativeFront to zespół pasjonatów tworzących wyjątkowe strony internetowe i sklepy online.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Śledź nas</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/creativefront1/" aria-label="Facebook CreativeFront"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/creativefront" aria-label="Instagram CreativeFront"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CreativeFront. Wszelkie prawa zastrzeżone.</p>
             </div>
         </div>
     </footer>
 
-    <div id="modal" class="modal" aria-hidden="true">
-        <button class="close" aria-label="Zamknij">&times;</button>
-        <img class="modal-content" id="modalImg" alt="Powiększony obraz projektu">
-    </div>
-
     <script src="script.js" defer></script>
 </body>
+
 </html>
