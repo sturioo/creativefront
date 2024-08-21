@@ -112,6 +112,24 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -181,7 +199,6 @@ body {
     0% {
         transform: translateX(0) translateY(0);
     }
-
     100% {
         transform: translateX(100%) translateY(100%);
     }
@@ -637,27 +654,7 @@ body {
         padding: 0;
         margin-bottom: 2rem;
     }
-}
 
-/* Hamburger Menu */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-color);
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
-@media screen and (max-width: 768px) {
     .hamburger {
         display: block;
     }
