@@ -182,6 +182,7 @@ const portfolioItems = document.querySelectorAll('.portfolio-item');
 portfolioItems.forEach((item, index) => {
     item.style.transitionDelay = `${index * 0.1}s`;
 });
+
 // Hamburger Menu
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -195,42 +196,3 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
 }));
-
-// Lazy loading dla obrazów
-document.addEventListener('DOMContentLoaded', function () {
-    var lazyImages = [].slice.call(document.querySelectorAll('img[data-src]'));
-
-    if ('IntersectionObserver' in window) {
-        let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    let lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.classList.add('loaded');
-                    lazyImageObserver.unobserve(lazyImage);
-                }
-            });
-        });
-
-        lazyImages.forEach(function (lazyImage) {
-            lazyImageObserver.observe(lazyImage);
-        });
-    } else {
-        // Fallback dla przeglądarek bez wsparcia dla IntersectionObserver
-        lazyImages.forEach(function (lazyImage) {
-            lazyImage.src = lazyImage.dataset.src;
-            lazyImage.classList.add('loaded');
-        });
-    }
-});
-
-// Funkcja do opóźnionego ładowania skryptów
-function loadScript(src) {
-    var script = document.createElement('script');
-    script.src = src;
-    script.async = true;
-    document.body.appendChild(script);
-}
-
-// Przykład użycia:
-// loadScript('https://example.com/external-script.js');
