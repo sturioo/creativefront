@@ -284,31 +284,40 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Skontaktuj się z nami</h2>
-            <div class="contact-section">
-                <div class="contact-info">
-                    <h3>Dane kontaktowe</h3>
-                    <p><i class="fas fa-phone"></i> +48 792 828 884</p>
-                    <p><i class="fas fa-envelope"></i> creativefront.projects@gmail.com</p>
-                </div>
-               <form class="contact-form" action="https://formspree.io/f/xjkbzgjk" method="POST">
-    <input type="text" name="name" placeholder="Imię i nazwisko" required>
-    <input type="email" name="email" placeholder="E-mail" required>
-    <select name="service" required>
-        <option value="">Wybierz usługę</option>
-        <option value="shopify">Sklepy Shopify</option>
-        <option value="wordpress">Strony WordPress</option>
-        <option value="grafika">Grafika i logo</option>
-        <option value="seo">SEO/SEM</option>
-    </select>
-    <textarea name="message" placeholder="Twoja wiadomość" required></textarea>
-    <button type="submit" class="btn">Wyślij</button>
-</form>
+   <section id="contact">
+    <div class="container">
+        <h2>Skontaktuj się z nami</h2>
+        <div class="contact-section">
+            <div class="contact-info">
+                <h3>Dane kontaktowe</h3>
+                <p><i class="fas fa-phone"></i> +48 792 828 884</p>
+                <p><i class="fas fa-envelope"></i> creativefront.projects@gmail.com</p>
             </div>
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/xjkbzgjk" method="POST">
+                <input type="text" name="name" placeholder="Imię i nazwisko" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <select name="service" required>
+                    <option value="">Wybierz usługę</option>
+                    <option value="shopify">Sklepy Shopify</option>
+                    <option value="wordpress">Strony WordPress</option>
+                    <option value="grafika">Grafika i logo</option>
+                    <option value="seo">SEO/SEM</option>
+                </select>
+                <textarea name="message" placeholder="Twoja wiadomość" required></textarea>
+                <button type="submit" class="btn">Wyślij</button>
+            </form>
+            <script>
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault(); // Zapobiega natychmiastowemu wysłaniu formularza
+                fbq('track', 'Contact'); // Rejestruje zdarzenie kontaktu
+                setTimeout(() => {
+                    this.submit(); // Wysyła formularz po krótkim opóźnieniu
+                }, 500);
+            });
+            </script>
         </div>
-    </section>
+    </div>
+</section>
 
     <footer>
         <div class="container">
