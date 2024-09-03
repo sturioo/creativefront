@@ -273,19 +273,19 @@
                     <p><i class="fas fa-phone"></i> +48 792 828 884</p>
                     <p><i class="fas fa-envelope"></i> creativefront.projects@gmail.com</p>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Imię i nazwisko" required>
-                    <input type="email" placeholder="E-mail" required>
-                    <select required>
-                        <option value="">Wybierz usługę</option>
-                        <option value="shopify">Sklepy Shopify</option>
-                        <option value="wordpress">Strony WordPress</option>
-                        <option value="grafika">Grafika i logo</option>
-                        <option value="seo">SEO/SEM</option>
-                    </select>
-                    <textarea placeholder="Twoja wiadomość" required></textarea>
-                    <button type="submit" class="btn">Wyślij</button>
-                </form>
+               <form class="contact-form" action="https://formspree.io/f/mgvwd1vj" method="POST">
+    <input type="text" name="name" placeholder="Imię i nazwisko" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <select name="service" required>
+        <option value="">Wybierz usługę</option>
+        <option value="shopify">Sklepy Shopify</option>
+        <option value="wordpress">Strony WordPress</option>
+        <option value="grafika">Grafika i logo</option>
+        <option value="seo">SEO/SEM</option>
+    </select>
+    <textarea name="message" placeholder="Twoja wiadomość" required></textarea>
+    <button type="submit" class="btn">Wyślij</button>
+</form>
             </div>
         </div>
     </section>
